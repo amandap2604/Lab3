@@ -1,0 +1,72 @@
+use std::io::stdin;
+
+fn is_isbn10() -> bool{
+    let mut contador String = String::new();
+    // se evalúa si la cantidad de caracteres ingresados es válido
+    for m in isbn10{
+        contador = contador + 1;
+    }
+    
+    if contador == 13{
+        return true
+    } else{
+        return false
+    }
+}
+
+
+fn is_isbn_format_valid(c: &str) -> bool {
+
+    // Se revisa si el formato en el que ingreso este dato es válido
+    // en el caso de que no sea válido, con la función .unwrap(),
+    // no se perderán los datos
+    if c.chars().next().unwrap().is_numeric() {
+        return true;
+    } else if c == "X" || c == "x"{
+        return true;
+    }
+    return false
+}
+
+fn main(){
+    // declaración de variables
+    let mut formula_isbn: String = String::new();
+    let mut isbn: String = String::new();
+    let mut clean_isbn: String = String::new();
+    // se ingresan los datos
+    stdin().read_line(&mut isbn).unwrap();
+
+    // variable "isbn" es la que contiene la información ingresada
+   
+    // va revisando, uno a uno, los elementos del dato ingresado.
+    // Si la función de revisión de formato en ese elemento es válida,
+    // es decir, que no sea un guión u otro elemento,
+    // los números se van agregando a la variable "clean_isbn" 
+    for c in isbn.to_string().trim().chars(){
+        if is_isbn_format_valid(&c.to_string()){
+            clean_isbn = clean_isbn + &c.to_string(); 
+        }
+    }
+
+    for d: IntoIterator  in clean_isbn{
+        x = x + 1;
+        formula_isbn = formula_isbn + (x * d);
+    }
+    formula_isbn = formula_isbn mod 11;
+
+    
+    fn formula() -> bool{
+        if formula_isbn == 0{
+        return true
+    } else{
+        return false
+    }
+    
+    // Hace referencia a la salida de este código, si es que el ISBN10
+    // ingresado es cero, es válido, de lo contrario, será incorrecto.
+    if formula() == true{
+        println!("{} es un ISBN10 valido", clean_isbn);
+    } else {
+        println!("No lo es");
+    }
+}
