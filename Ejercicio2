@@ -1,0 +1,23 @@
+use std::io::stdi
+
+fn ingreso(){
+    let mut cadena: String = String::new();
+    stdin().read_line(&mut cadena).unwrap();
+}
+
+for x in cadena{
+    if x == "A"{
+        cadena_arn = cadena_arn + "U"
+    } elif  x == "G"{
+        cadena_arn = cadena_arn + "C"
+    } elif x == "C"{
+        cadena_arn = cadena_arn + "G"
+    } elif == "T"{
+        cadena_arn = cadena_arn + "A"
+    } else{
+        println!("Ingrese cadena válida, recuerde que todo lo ingresado debe estar en mayúsculas.")
+    }
+    
+}
+
+println!("Esta es la cadena en ARN: {}", cadena_arn)
